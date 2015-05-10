@@ -1,0 +1,1 @@
+(defalias 'list-buffers 'ibuffer)
