@@ -2,6 +2,11 @@
 (source melpa)
 
 (depends-on "cask")
+(depends-on "elixir-mode")
 (depends-on "exec-path-from-shell")
+(depends-on "haskell-mode")
 (depends-on "nyan-mode")
 (depends-on "pallet")
+(depends-on "projectile")
+(depends-on "yaml-mode")
+(depends-on "zenburn-theme")

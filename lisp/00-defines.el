@@ -20,3 +20,22 @@
                 (vector (append mod (list to)))))))))
     (when input-method
       (activate-input-method current))))
+
+(defun add-watchwords ()
+  (font-lock-add-keywords
+   nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
+          1 font-lock-warning-face t))))
+
+(defun prog-defaults ()
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 2)
+  (whitespace-mode t)
+  (projectile-mode t)
+  (add-watchwords)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace))
+
+(add-hook 'prog-hook 'prog-defaults)
+
+(defun run-prog-hook ()
+  (interactive)
+  (run-hooks 'prog-hook))
